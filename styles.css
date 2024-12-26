@@ -1,0 +1,213 @@
+:root {
+  --clr-primary-cyan: #2ab2af;
+  --clr-primary-bright-yellow: #c0df34;
+  --clr-neutral-light-gray: #e5eff5;
+  --clr-neutral-grayish-blue: #98a6bd;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--clr-neutral-light-gray);
+  height: 100vh;
+  font-family: Karla, sans-serif;
+  display: grid;
+  place-items: center;
+
+}
+
+#card {
+  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+  /* justify-content: center; */
+  grid-template-columns: 20% repeat(4, 1fr) 20%;
+  grid-template-areas:
+    '. a a a a .'
+    '. b b c c .';
+}
+
+#top-section {
+  background-color: white;
+  padding: 50px;
+  grid-area: a;
+  border-radius: 10px 10px 0 0;
+}
+
+#h2-green {
+  color: var(--clr-primary-cyan);
+}
+
+#clr-yellow {
+  color: var(--clr-primary-bright-yellow);
+  font-weight: 700;
+  padding-top: 30px;
+}
+
+#gray-text {
+  color: var(--clr-neutral-grayish-blue);
+  padding-top: 15px;
+  line-height: 1.5;
+}
+
+
+
+.wrapper {
+  display: flex;
+}
+
+#monthly-sub {
+  margin-bottom: 30px;
+  font-size: 1.2em;
+}
+
+#month {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  opacity: 0.5;
+}
+
+#price {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+
+}
+
+
+#bottom-left-section {
+  grid-area: b;
+  background-color: var(--clr-primary-cyan);
+  color: var(--clr-neutral-light-gray);
+  padding: 50px;
+  border-radius: 0 0 0 10px;
+}
+
+#bottom-right-section {
+  grid-area: c;
+  background-color: hsla(179, 62%, 43%, .8);
+  color: var(--clr-neutral-light-gray);
+  padding: 40px 50px;
+  border-radius: 0 0 10px 0;
+}
+
+button {
+  background-color: var(--clr-primary-bright-yellow);
+  width: 310px;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  color: var(--clr-neutral-light-gray);
+  font-size: 1.04rem;
+  font-weight: 700;
+  margin-top: 30px;
+  box-shadow: 5px 5px 5px 4px rgb(0 0 0 / 10%);
+}
+
+button:hover {
+  cursor: pointer;
+  background: hsl(71, 73%, 54%, 0.9);
+  transition: .8s ease;
+  transform: scale(1.02);
+}
+
+
+
+#bottom-right-section ul {
+  list-style-type: none;
+  margin-top: 25px;
+}
+
+#bottom-right-section ul li {
+  font-size: .8em;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+@media (max-width: 1322px) {
+  .btn {
+    width: 100%;
+  }
+
+  .top-para {
+    font-size: .8rem;
+  }
+}
+
+@media (max-width: 910px) {
+  #card {
+    grid-template-areas:
+      '. a a a a .'
+      '. b b b b .'
+      '. c c c c .';
+  }
+
+  #bottom-left-section {
+    border-radius: 0 0 0 0px;
+  }
+
+  #bottom-right-section {
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+@media (max-width: 684px) {
+  #top-section {
+    padding: 25px 25px 40px 25px;
+  }
+
+  #bottom-left-section {
+    padding: 25px;
+  }
+
+  #bottom-right-section {
+    padding: 25px 25px 30px 25px;
+  }
+
+  #gray-text {
+    font-size: .9rem;
+  }
+}
+
+@media (max-width: 598px) {
+  #card {
+    grid-template-columns: 10% repeat(4, 1fr) 10%;
+  }
+}
+
+@media (max-width: 424px) {
+  #h2-green {
+    font-size: 1rem;
+  }
+
+  #clr-yellow {
+    font-size: .8rem;
+    padding-top: 20px;
+  }
+
+  #price {
+    font-size: 1.7rem;
+  }
+
+
+  #monthly-sub {
+    font-size: .8rem;
+  }
+
+  #gray-text {
+    font-size: .72rem;
+    line-height: 1.7;
+  }
+}
